@@ -1,62 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-10-17T13:39:12.243648" rpa="false" schemaversion="5">
-<suite id="s1" name="Capturescreen" source="/home/gaurang/PycharmProjects/Automation/TestCases/capturescreen.robot">
-<test id="s1-t1" name="LoginTC" line="5">
+<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-10-22T10:13:01.172844" rpa="false" schemaversion="5">
+<suite id="s1" name="Mouseoperations" source="/home/gaurang/PycharmProjects/Automation/TestCases/mouseoperations.robot">
+<test id="s1-t1" name="MouseActions" line="4">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-10-17T13:39:12.392566" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
-<arg>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</arg>
+<msg time="2025-10-22T10:13:01.322126" level="INFO">Opening browser 'chrome' to base url 'https://swisnl.github.io/jQuery-contextMenu/demo.html'.</msg>
+<arg>https://swisnl.github.io/jQuery-contextMenu/demo.html</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-10-17T13:39:12.392295" elapsed="4.565886"/>
+<status status="PASS" start="2025-10-22T10:13:01.321848" elapsed="1.495895"/>
 </kw>
-<kw name="Set Window Size" owner="SeleniumLibrary">
-<arg>1920</arg>
-<arg>1080</arg>
-<doc>Sets current windows size to given ``width`` and ``height``.</doc>
-<status status="PASS" start="2025-10-17T13:39:16.958491" elapsed="0.015383"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-22T10:13:02.818023" elapsed="0.023262"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//input[contains(@placeholder, 'Username')]</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-10-17T13:39:16.974221" elapsed="0.932657"/>
+<kw name="Open Context Menu" owner="SeleniumLibrary">
+<arg>//span[@class='context-menu-one btn btn-neutral']</arg>
+<doc>Opens the context menu on the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-22T10:13:02.841588" elapsed="0.306879"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-10-17T13:39:17.907604" level="INFO">Typing text 'Admin' into text field 'xpath=//input[contains(@placeholder, 'Username')]'.</msg>
-<arg>xpath=//input[contains(@placeholder, 'Username')]</arg>
-<arg>Admin</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-10-17T13:39:17.907239" elapsed="0.079215"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-22T10:13:06.149859" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-22T10:13:03.149124" elapsed="3.001196"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-10-17T13:39:17.987099" level="INFO">Typing text 'admin123' into text field 'xpath=//input[contains(@placeholder, 'Password')]'.</msg>
-<arg>xpath=//input[contains(@placeholder, 'Password')]</arg>
-<arg>admin123</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-10-17T13:39:17.986779" elapsed="0.077570"/>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-22T10:13:06.151956" level="INFO">Opening url 'https://testautomationpractice.blogspot.com/'</msg>
+<arg>https://testautomationpractice.blogspot.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-22T10:13:06.151255" elapsed="5.346441"/>
 </kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//div[@class='orangehrm-login-branding']/img</arg>
-<arg>timeout=10s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-10-17T13:39:18.064640" elapsed="0.262270"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-22T10:13:11.498072" elapsed="0.003044"/>
 </kw>
-<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
-<msg time="2025-10-17T13:39:18.596047" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Logo.png"&gt;&lt;img src="Logo.png" width="400px"&gt;&lt;/a&gt;</msg>
-<arg>xpath=//div[@class='orangehrm-login-branding']/img</arg>
-<arg>Logo.png</arg>
-<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
-<status status="PASS" start="2025-10-17T13:39:18.327908" elapsed="0.268324"/>
+<kw name="Double Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-22T10:13:11.502054" level="INFO">Double clicking element 'xpath://button[contains(text(),'Copy Text')]'.</msg>
+<arg>xpath://button[contains(text(),'Copy Text')]</arg>
+<doc>Double clicks the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-22T10:13:11.501541" elapsed="0.293151"/>
 </kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-10-17T13:39:18.780512" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="LoginTC.png"&gt;&lt;img src="LoginTC.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>LoginTC.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-10-17T13:39:18.596561" elapsed="0.184122"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-22T10:13:14.795523" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-22T10:13:11.794977" elapsed="3.001119"/>
 </kw>
-<status status="PASS" start="2025-10-17T13:39:12.391244" elapsed="6.389739"/>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-10-22T10:13:14.798432" level="INFO">Opening url 'https://testautomationpractice.blogspot.com/'</msg>
+<arg>https://testautomationpractice.blogspot.com/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-10-22T10:13:14.797308" elapsed="2.603704"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-10-22T10:13:17.401352" elapsed="0.005697"/>
+</kw>
+<kw name="Drag And Drop" owner="SeleniumLibrary">
+<arg>id:draggable</arg>
+<arg>id:droppable</arg>
+<doc>Drags the element identified by ``locator`` into the ``target`` element.</doc>
+<status status="PASS" start="2025-10-22T10:13:17.407346" elapsed="0.572454"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-22T10:13:20.982286" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-22T10:13:17.981018" elapsed="3.001831"/>
+</kw>
+<status status="PASS" start="2025-10-22T10:13:01.320784" elapsed="19.663414"/>
 </test>
-<status status="PASS" start="2025-10-17T13:39:12.244576" elapsed="6.537075"/>
+<status status="PASS" start="2025-10-22T10:13:01.173825" elapsed="19.814129"/>
 </suite>
 <statistics>
 <total>
@@ -65,7 +79,7 @@
 <tag>
 </tag>
 <suite>
-<stat name="Capturescreen" id="s1" pass="1" fail="0" skip="0">Capturescreen</stat>
+<stat name="Mouseoperations" id="s1" pass="1" fail="0" skip="0">Mouseoperations</stat>
 </suite>
 </statistics>
 <errors>

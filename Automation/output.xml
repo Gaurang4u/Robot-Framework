@@ -1,76 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-10-22T10:13:01.172844" rpa="false" schemaversion="5">
-<suite id="s1" name="Mouseoperations" source="/home/gaurang/PycharmProjects/Automation/TestCases/mouseoperations.robot">
-<test id="s1-t1" name="MouseActions" line="4">
+<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-10-24T12:50:30.435535" rpa="false" schemaversion="5">
+<suite id="s1" name="Userkeywords" source="/home/gaurang/PycharmProjects/Automation/TestCases/userkeywords.robot">
+<test id="s1-t1" name="TC1" line="9">
+<kw name="LaunchBrowser" owner="resources">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-10-22T10:13:01.322126" level="INFO">Opening browser 'chrome' to base url 'https://swisnl.github.io/jQuery-contextMenu/demo.html'.</msg>
-<arg>https://swisnl.github.io/jQuery-contextMenu/demo.html</arg>
-<arg>chrome</arg>
+<msg time="2025-10-24T12:50:30.604269" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
+<arg>${appurl}</arg>
+<arg>${appbrowser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-10-22T10:13:01.321848" elapsed="1.495895"/>
+<status status="PASS" start="2025-10-24T12:50:30.603935" elapsed="2.261839"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-10-22T10:13:02.818023" elapsed="0.023262"/>
+<status status="PASS" start="2025-10-24T12:50:32.866134" elapsed="0.023377"/>
 </kw>
-<kw name="Open Context Menu" owner="SeleniumLibrary">
-<arg>//span[@class='context-menu-one btn btn-neutral']</arg>
-<doc>Opens the context menu on the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-10-22T10:13:02.841588" elapsed="0.306879"/>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-10-24T12:50:32.898659" level="INFO">${title} = nopCommerce demo store. Home page title</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-10-24T12:50:32.889783" elapsed="0.008959"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-10-22T10:13:06.149859" level="INFO">Slept 3 seconds.</msg>
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-10-22T10:13:03.149124" elapsed="3.001196"/>
+<return>
+<value>${title}</value>
+<status status="PASS" start="2025-10-24T12:50:32.898885" elapsed="0.000106"/>
+</return>
+<msg time="2025-10-24T12:50:32.899343" level="INFO">${pagetitle} = nopCommerce demo store. Home page title</msg>
+<var>${pagetitle}</var>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<status status="PASS" start="2025-10-24T12:50:30.602854" elapsed="2.296550"/>
 </kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-10-22T10:13:06.151956" level="INFO">Opening url 'https://testautomationpractice.blogspot.com/'</msg>
-<arg>https://testautomationpractice.blogspot.com/</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-10-22T10:13:06.151255" elapsed="5.346441"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${pagetitle}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-10-24T12:50:32.899743" elapsed="0.000523"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-10-22T10:13:11.498072" elapsed="0.003044"/>
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-10-24T12:50:32.901246" level="INFO">Clicking link 'xpath://a[@class='ico-login']'.</msg>
+<arg>xpath://a[@class='ico-login']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-24T12:50:32.900626" elapsed="2.078268"/>
 </kw>
-<kw name="Double Click Element" owner="SeleniumLibrary">
-<msg time="2025-10-22T10:13:11.502054" level="INFO">Double clicking element 'xpath://button[contains(text(),'Copy Text')]'.</msg>
-<arg>xpath://button[contains(text(),'Copy Text')]</arg>
-<doc>Double clicks the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-10-22T10:13:11.501541" elapsed="0.293151"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-24T12:50:34.979779" level="INFO">Typing text 'pavanoltraining@gmail.com' into text field 'id:Email'.</msg>
+<arg>id:Email</arg>
+<arg>pavanoltraining@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-24T12:50:34.979305" elapsed="0.076027"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-10-22T10:13:14.795523" level="INFO">Slept 3 seconds.</msg>
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-10-22T10:13:11.794977" elapsed="3.001119"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-10-24T12:50:35.055890" level="INFO">Typing text 'Test@123' into text field 'id:Password'.</msg>
+<arg>id:Password</arg>
+<arg>Test@123</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-24T12:50:35.055593" elapsed="0.065191"/>
 </kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2025-10-22T10:13:14.798432" level="INFO">Opening url 'https://testautomationpractice.blogspot.com/'</msg>
-<arg>https://testautomationpractice.blogspot.com/</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2025-10-22T10:13:14.797308" elapsed="2.603704"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-10-24T12:50:35.121380" level="INFO">Clicking element 'xpath://button[@class='button-1 login-button']'.</msg>
+<arg>xpath://button[@class='button-1 login-button']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-10-24T12:50:35.121056" elapsed="0.052150"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-10-22T10:13:17.401352" elapsed="0.005697"/>
-</kw>
-<kw name="Drag And Drop" owner="SeleniumLibrary">
-<arg>id:draggable</arg>
-<arg>id:droppable</arg>
-<doc>Drags the element identified by ``locator`` into the ``target`` element.</doc>
-<status status="PASS" start="2025-10-22T10:13:17.407346" elapsed="0.572454"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-10-22T10:13:20.982286" level="INFO">Slept 3 seconds.</msg>
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-10-22T10:13:17.981018" elapsed="3.001831"/>
-</kw>
-<status status="PASS" start="2025-10-22T10:13:01.320784" elapsed="19.663414"/>
+<status status="PASS" start="2025-10-24T12:50:30.602069" elapsed="4.571530"/>
 </test>
-<status status="PASS" start="2025-10-22T10:13:01.173825" elapsed="19.814129"/>
+<status status="PASS" start="2025-10-24T12:50:30.436588" elapsed="4.737774"/>
 </suite>
 <statistics>
 <total>
@@ -79,9 +72,10 @@
 <tag>
 </tag>
 <suite>
-<stat name="Mouseoperations" id="s1" pass="1" fail="0" skip="0">Mouseoperations</stat>
+<stat name="Userkeywords" id="s1" pass="1" fail="0" skip="0">Userkeywords</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-10-24T12:50:30.600767" level="WARN">Error in file '/home/gaurang/PycharmProjects/Automation/Resources/resources.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>

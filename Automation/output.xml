@@ -1,69 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-10-24T12:50:30.435535" rpa="false" schemaversion="5">
-<suite id="s1" name="Userkeywords" source="/home/gaurang/PycharmProjects/Automation/TestCases/userkeywords.robot">
-<test id="s1-t1" name="TC1" line="9">
-<kw name="LaunchBrowser" owner="resources">
+<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-10-27T10:34:36.794132" rpa="false" schemaversion="5">
+<suite id="s1" name="Scrollingpage" source="/home/gaurang/PycharmProjects/Automation/TestCases/scrollingpage.robot">
+<test id="s1-t1" name="ScrollingTest" line="5">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-10-24T12:50:30.604269" level="INFO">Opening browser 'chrome' to base url 'https://demo.nopcommerce.com/'.</msg>
-<arg>${appurl}</arg>
-<arg>${appbrowser}</arg>
+<msg time="2025-10-27T10:34:36.963798" level="INFO">Opening browser 'chrome' to base url 'https://www.countries-ofthe-world.com/flags-of-the-world.html'.</msg>
+<arg>https://www.countries-ofthe-world.com/flags-of-the-world.html</arg>
+<arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-10-24T12:50:30.603935" elapsed="2.261839"/>
+<status status="PASS" start="2025-10-27T10:34:36.963475" elapsed="3.213335"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-10-24T12:50:32.866134" elapsed="0.023377"/>
+<status status="PASS" start="2025-10-27T10:34:40.177960" elapsed="0.052890"/>
 </kw>
-<kw name="Get Title" owner="SeleniumLibrary">
-<msg time="2025-10-24T12:50:32.898659" level="INFO">${title} = nopCommerce demo store. Home page title</msg>
-<var>${title}</var>
-<doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2025-10-24T12:50:32.889783" elapsed="0.008959"/>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-10-27T10:34:40.231642" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-10-27T10:34:40.231199" elapsed="0.012713"/>
 </kw>
-<return>
-<value>${title}</value>
-<status status="PASS" start="2025-10-24T12:50:32.898885" elapsed="0.000106"/>
-</return>
-<msg time="2025-10-24T12:50:32.899343" level="INFO">${pagetitle} = nopCommerce demo store. Home page title</msg>
-<var>${pagetitle}</var>
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<status status="PASS" start="2025-10-24T12:50:30.602854" elapsed="2.296550"/>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-10-27T10:34:43.245076" level="INFO">Slept 3 seconds.</msg>
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-10-27T10:34:40.244417" elapsed="3.001124"/>
 </kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${pagetitle}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-10-24T12:50:32.899743" elapsed="0.000523"/>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-10-27T10:34:43.248455" level="INFO">Executing JavaScript:
+window.scrollTo(0,-document.body.scrollHeight)
+Without any arguments.</msg>
+<arg>window.scrollTo(0,-document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-10-27T10:34:43.246583" elapsed="0.028608"/>
 </kw>
-<kw name="Click Link" owner="SeleniumLibrary">
-<msg time="2025-10-24T12:50:32.901246" level="INFO">Clicking link 'xpath://a[@class='ico-login']'.</msg>
-<arg>xpath://a[@class='ico-login']</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<status status="PASS" start="2025-10-24T12:50:32.900626" elapsed="2.078268"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-10-24T12:50:34.979779" level="INFO">Typing text 'pavanoltraining@gmail.com' into text field 'id:Email'.</msg>
-<arg>id:Email</arg>
-<arg>pavanoltraining@gmail.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-10-24T12:50:34.979305" elapsed="0.076027"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-10-24T12:50:35.055890" level="INFO">Typing text 'Test@123' into text field 'id:Password'.</msg>
-<arg>id:Password</arg>
-<arg>Test@123</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-10-24T12:50:35.055593" elapsed="0.065191"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-10-24T12:50:35.121380" level="INFO">Clicking element 'xpath://button[@class='button-1 login-button']'.</msg>
-<arg>xpath://button[@class='button-1 login-button']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-10-24T12:50:35.121056" elapsed="0.052150"/>
-</kw>
-<status status="PASS" start="2025-10-24T12:50:30.602069" elapsed="4.571530"/>
+<status status="PASS" start="2025-10-27T10:34:36.962340" elapsed="6.314236"/>
 </test>
-<status status="PASS" start="2025-10-24T12:50:30.436588" elapsed="4.737774"/>
+<status status="PASS" start="2025-10-27T10:34:36.795322" elapsed="6.484605"/>
 </suite>
 <statistics>
 <total>
@@ -72,10 +46,9 @@
 <tag>
 </tag>
 <suite>
-<stat name="Userkeywords" id="s1" pass="1" fail="0" skip="0">Userkeywords</stat>
+<stat name="Scrollingpage" id="s1" pass="1" fail="0" skip="0">Scrollingpage</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-10-24T12:50:30.600767" level="WARN">Error in file '/home/gaurang/PycharmProjects/Automation/Resources/resources.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>

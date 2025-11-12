@@ -1,180 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-11-10T10:35:30.757158" rpa="false" schemaversion="5">
-<suite id="s1" name="Ddt3" source="/home/gaurang/PycharmProjects/Automation/TestCases/ddt3.robot">
-<kw name="LaunchBrowser" owner="login_resources1" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-10T10:35:30.931650" level="INFO">Opening browser 'chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
-<arg>${login url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-10T10:35:30.931327" elapsed="2.826877"/>
+<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-11-12T13:05:23.991007" rpa="false" schemaversion="5">
+<suite id="s1" name="Dbtesting" source="/home/gaurang/PycharmProjects/Automation/TestCases/dbtesting.robot">
+<kw name="Connect To Database" owner="DatabaseLibrary" type="SETUP">
+<msg time="2025-11-12T13:05:24.039636" level="INFO">Looking for configuration file: 'resources/db.cfg'</msg>
+<msg time="2025-11-12T13:05:24.039698" level="INFO">Configuration file doesn't exist</msg>
+<msg time="2025-11-12T13:05:24.045014" level="INFO">Connect to DB using : pymysql.connect(db='mydb', user=***, passwd=***, host='127.0.0.1', port=3306, charset='utf8mb4')</msg>
+<arg>pymysql</arg>
+<arg>${DBName}</arg>
+<arg>${DBUser}</arg>
+<arg>${DBPass}</arg>
+<arg>${DBHost}</arg>
+<arg>${DBPort}</arg>
+<doc>Creates a database connection using the DB API 2.0 ``db_module`` and the parameters provided.
+Along with listed commonly used arguments (`db_name`, `db_host` etc.)
+you can set any other DB module specific parameters as key/value pairs.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.039217" elapsed="0.008038"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-10T10:35:33.759201" elapsed="0.046902"/>
+<test id="s1-t1" name="Check if exist in DB" line="32">
+<kw name="Check If Exists In Database" owner="DatabaseLibrary">
+<msg time="2025-11-12T13:05:24.047911" level="WARN">Keyword 'DatabaseLibrary.Check If Exists In Database' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-11-12T13:05:24.048182" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;select id from mydb.person where first_name="David"&lt;/code&gt;</msg>
+<msg time="2025-11-12T13:05:24.048615" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T13:05:24.048789" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto; max-height: 500px; overflow-y: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="position: sticky; top: 0; color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;id&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;102&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<arg>select id from mydb.person where first_name="David"</arg>
+<doc>*DEPRECATED* Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.047871" elapsed="0.001016"/>
 </kw>
-<status status="PASS" start="2025-11-10T10:35:30.930493" elapsed="2.875774"/>
-</kw>
-<test id="s1-t1" name="LogintestwithExcel student" line="10">
-<kw name="InvalidLogin">
-<kw name="InputUsername" owner="login_resources1">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-10T10:35:33.810396" level="INFO">Typing text 'student' into text field 'id:username'.</msg>
-<arg>id:username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-10T10:35:33.809966" elapsed="0.084689"/>
-</kw>
-<arg>${username}</arg>
-<status status="PASS" start="2025-11-10T10:35:33.809399" elapsed="0.085466"/>
-</kw>
-<kw name="InputPassword" owner="login_resources1">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-10T10:35:33.896301" level="INFO">Typing text 'pass:' into text field 'id:password'.</msg>
-<arg>id:password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-10T10:35:33.895852" elapsed="0.065943"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2025-11-10T10:35:33.895194" elapsed="0.066846"/>
-</kw>
-<kw name="ClickLogin" owner="login_resources1">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-11-10T10:35:33.963161" level="INFO">Clicking element 'xpath://button[@id='submit']'.</msg>
-<arg>xpath://button[@id='submit']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-10T10:35:33.962882" elapsed="0.052771"/>
-</kw>
-<status status="PASS" start="2025-11-10T10:35:33.962360" elapsed="0.053442"/>
-</kw>
-<kw name="ErrorMessage" owner="login_resources1">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>invalid!</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-10T10:35:34.016789" elapsed="0.012556"/>
-</kw>
-<status status="PASS" start="2025-11-10T10:35:34.016088" elapsed="0.013501"/>
-</kw>
-<arg>username=student</arg>
-<arg>password=pass:</arg>
-<status status="PASS" start="2025-11-10T10:35:33.808692" elapsed="0.221034"/>
-</kw>
-<status status="PASS" start="2025-11-10T10:35:33.806448" elapsed="0.223531"/>
+<status status="PASS" start="2025-11-12T13:05:24.047447" elapsed="0.001655"/>
 </test>
-<test id="s1-t2" name="LogintestwithExcel stu" line="10">
-<kw name="InvalidLogin">
-<kw name="InputUsername" owner="login_resources1">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-10T10:35:34.033805" level="INFO">Typing text 'stu' into text field 'id:username'.</msg>
-<arg>id:username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-10T10:35:34.033265" elapsed="0.056552"/>
+<test id="s1-t2" name="Check if not exist in DB" line="35">
+<kw name="Check If Not Exists In Database" owner="DatabaseLibrary">
+<msg time="2025-11-12T13:05:24.049816" level="WARN">Keyword 'DatabaseLibrary.Check If Not Exists In Database' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-11-12T13:05:24.050080" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;select id from mydb.person where first_name="Danny"&lt;/code&gt;</msg>
+<msg time="2025-11-12T13:05:24.050474" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T13:05:24.050631" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto; max-height: 500px; overflow-y: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 0 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="position: sticky; top: 0; color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;id&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<arg>select id from mydb.person where first_name="Danny"</arg>
+<doc>*DEPRECATED* Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.049777" elapsed="0.000942"/>
 </kw>
-<arg>${username}</arg>
-<status status="PASS" start="2025-11-10T10:35:34.032611" elapsed="0.057465"/>
-</kw>
-<kw name="InputPassword" owner="login_resources1">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-10T10:35:34.091637" level="INFO">Typing text 'password' into text field 'id:password'.</msg>
-<arg>id:password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-10T10:35:34.091212" elapsed="0.053914"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2025-11-10T10:35:34.090486" elapsed="0.054815"/>
-</kw>
-<kw name="ClickLogin" owner="login_resources1">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-11-10T10:35:34.146146" level="INFO">Clicking element 'xpath://button[@id='submit']'.</msg>
-<arg>xpath://button[@id='submit']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-10T10:35:34.145910" elapsed="0.039358"/>
-</kw>
-<status status="PASS" start="2025-11-10T10:35:34.145541" elapsed="0.039895"/>
-</kw>
-<kw name="ErrorMessage" owner="login_resources1">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>invalid!</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-10T10:35:34.186050" elapsed="0.007816"/>
-</kw>
-<status status="PASS" start="2025-11-10T10:35:34.185638" elapsed="0.008369"/>
-</kw>
-<arg>username=stu</arg>
-<arg>password=password</arg>
-<status status="PASS" start="2025-11-10T10:35:34.031836" elapsed="0.162261"/>
-</kw>
-<status status="PASS" start="2025-11-10T10:35:34.030312" elapsed="0.163995"/>
+<status status="PASS" start="2025-11-12T13:05:24.049368" elapsed="0.001557"/>
 </test>
-<test id="s1-t3" name="LogintestwithExcel 123" line="10">
-<kw name="InvalidLogin">
-<kw name="InputUsername" owner="login_resources1">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-10T10:35:34.196729" level="INFO">Typing text '123' into text field 'id:username'.</msg>
-<arg>id:username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-10T10:35:34.196485" elapsed="0.052271"/>
+<test id="s1-t3" name="Check person table exist in DB" line="38">
+<kw name="Table Must Exist" owner="DatabaseLibrary">
+<msg time="2025-11-12T13:05:24.051838" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT * FROM information_schema.tables WHERE table_name='person'&lt;/code&gt;</msg>
+<msg time="2025-11-12T13:05:24.053811" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T13:05:24.054046" level="INFO">Retrieved 1 rows</msg>
+<msg time="2025-11-12T13:05:24.054116" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto; max-height: 500px; overflow-y: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="position: sticky; top: 0; color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;TABLE_CATALOG&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;TABLE_SCHEMA&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;TABLE_NAME&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;TABLE_TYPE&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;ENGINE&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;VERSION&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;ROW_FORMAT&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;TABLE_ROWS&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;AVG_ROW_LENGTH&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;DATA_LENGTH&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;MAX_DATA_LENGTH&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;INDEX_LENGTH&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;DATA_FREE&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;AUTO_INCREMENT&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;CREATE_TIME&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;UPDATE_TIME&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;CHECK_TIME&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;TABLE_COLLATION&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;CHECKSUM&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;CREATE_OPTIONS&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;TABLE_COMMENT&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;def&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;mydb&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;person&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;BASE TABLE&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;InnoDB&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;10&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Dynamic&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;5&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3276&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;16384&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2025-11-12 11:16:25&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2025-11-12 12:56:24&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;utf8mb4_0900_ai_ci&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;None&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<arg>person</arg>
+<doc>Check if the table with `table_name` exists in the database.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.051582" elapsed="0.002712"/>
 </kw>
-<arg>${username}</arg>
-<status status="PASS" start="2025-11-10T10:35:34.196137" elapsed="0.052782"/>
-</kw>
-<kw name="InputPassword" owner="login_resources1">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-10T10:35:34.249988" level="INFO">Typing text '123' into text field 'id:password'.</msg>
-<arg>id:password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-10T10:35:34.249658" elapsed="0.055634"/>
-</kw>
-<arg>${password}</arg>
-<status status="PASS" start="2025-11-10T10:35:34.249202" elapsed="0.056296"/>
-</kw>
-<kw name="ClickLogin" owner="login_resources1">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-11-10T10:35:34.306645" level="INFO">Clicking element 'xpath://button[@id='submit']'.</msg>
-<arg>xpath://button[@id='submit']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-10T10:35:34.306279" elapsed="0.040028"/>
-</kw>
-<status status="PASS" start="2025-11-10T10:35:34.305802" elapsed="0.040702"/>
-</kw>
-<kw name="ErrorMessage" owner="login_resources1">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>invalid!</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-11-10T10:35:34.347362" elapsed="0.007043"/>
-</kw>
-<status status="PASS" start="2025-11-10T10:35:34.346799" elapsed="0.007759"/>
-</kw>
-<arg>username=123</arg>
-<arg>password=123</arg>
-<status status="PASS" start="2025-11-10T10:35:34.195717" elapsed="0.158920"/>
-</kw>
-<status status="PASS" start="2025-11-10T10:35:34.194576" elapsed="0.160264"/>
+<status status="PASS" start="2025-11-12T13:05:24.051170" elapsed="0.003345"/>
 </test>
-<kw name="CloseBrowser" owner="login_resources1" type="TEARDOWN">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-11-10T10:35:34.355659" elapsed="0.057531"/>
+<test id="s1-t4" name="Verify row count is zero" line="41">
+<kw name="Row Count Is 0" owner="DatabaseLibrary">
+<msg time="2025-11-12T13:05:24.055120" level="WARN">Keyword 'DatabaseLibrary.Row Count Is 0' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-11-12T13:05:24.055364" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT * from mydb.person WHERE first_name='xyz'&lt;/code&gt;</msg>
+<msg time="2025-11-12T13:05:24.055781" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T13:05:24.055980" level="INFO">Retrieved 0 rows</msg>
+<msg time="2025-11-12T13:05:24.056034" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto; max-height: 500px; overflow-y: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 0 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="position: sticky; top: 0; color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;id&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;first_name&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;last_name&lt;/th&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<arg>SELECT * from mydb.person WHERE first_name='xyz'</arg>
+<doc>*DEPRECATED* Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.055083" elapsed="0.001066"/>
 </kw>
-<status status="PASS" start="2025-11-10T10:35:34.355383" elapsed="0.057973"/>
+<status status="PASS" start="2025-11-12T13:05:24.054735" elapsed="0.001635"/>
+</test>
+<test id="s1-t5" name="Verify row count is equal tp" line="44">
+<kw name="Row Count Is Equal To X" owner="DatabaseLibrary">
+<msg time="2025-11-12T13:05:24.057001" level="WARN">Keyword 'DatabaseLibrary.Row Count Is Equal To X' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-11-12T13:05:24.057250" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT * from mydb.person WHERE first_name='David'&lt;/code&gt;</msg>
+<msg time="2025-11-12T13:05:24.057678" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T13:05:24.057850" level="INFO">Retrieved 1 rows</msg>
+<msg time="2025-11-12T13:05:24.057898" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto; max-height: 500px; overflow-y: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 1 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="position: sticky; top: 0; color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;id&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;first_name&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;last_name&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;102&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;David&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Smith&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<arg>SELECT * from mydb.person WHERE first_name='David'</arg>
+<arg>1</arg>
+<doc>*DEPRECATED* Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.056962" elapsed="0.001015"/>
 </kw>
-<status status="PASS" start="2025-11-10T10:35:30.758031" elapsed="3.655382"/>
+<status status="PASS" start="2025-11-12T13:05:24.056611" elapsed="0.001537"/>
+</test>
+<test id="s1-t6" name="Verify row count greater than" line="47">
+<kw name="Row Count Is Greater Than X" owner="DatabaseLibrary">
+<msg time="2025-11-12T13:05:24.058921" level="WARN">Keyword 'DatabaseLibrary.Row Count Is Greater Than X' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-11-12T13:05:24.059200" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT * from mydb.person WHERE last_name='Smith'&lt;/code&gt;</msg>
+<msg time="2025-11-12T13:05:24.059757" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T13:05:24.060025" level="INFO">Retrieved 3 rows</msg>
+<msg time="2025-11-12T13:05:24.060099" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto; max-height: 500px; overflow-y: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 3 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="position: sticky; top: 0; color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;id&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;first_name&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;last_name&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;101&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;John&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Smith&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;102&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;David&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Smith&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;103&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Joe&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Smith&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<arg>SELECT * from mydb.person WHERE last_name='Smith'</arg>
+<arg>2</arg>
+<doc>*DEPRECATED* Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.058878" elapsed="0.001323"/>
+</kw>
+<status status="PASS" start="2025-11-12T13:05:24.058366" elapsed="0.002070"/>
+</test>
+<test id="s1-t7" name="Verify row count less than" line="50">
+<kw name="Row Count Is Less Than X" owner="DatabaseLibrary">
+<msg time="2025-11-12T13:05:24.061166" level="WARN">Keyword 'DatabaseLibrary.Row Count Is Less Than X' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-11-12T13:05:24.061509" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;SELECT * from mydb.person WHERE last_name='Smith'&lt;/code&gt;</msg>
+<msg time="2025-11-12T13:05:24.062066" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T13:05:24.062290" level="INFO">Retrieved 3 rows</msg>
+<msg time="2025-11-12T13:05:24.062356" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto; max-height: 500px; overflow-y: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 3 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="position: sticky; top: 0; color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;id&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;first_name&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;last_name&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;101&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;John&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Smith&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;102&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;David&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Smith&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;103&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Joe&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Smith&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<arg>SELECT * from mydb.person WHERE last_name='Smith'</arg>
+<arg>5</arg>
+<doc>*DEPRECATED* Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.061116" elapsed="0.001353"/>
+</kw>
+<status status="PASS" start="2025-11-12T13:05:24.060669" elapsed="0.002065"/>
+</test>
+<test id="s1-t8" name="Update record" line="53">
+<kw name="Execute Sql String" owner="DatabaseLibrary">
+<msg time="2025-11-12T13:05:24.063789" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;Update mydb.person set first_name="Jio" where id=104&lt;/code&gt;</msg>
+<msg time="2025-11-12T13:05:24.064125" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T13:05:24.064400" level="INFO">${output} = None</msg>
+<var>${output}</var>
+<arg>Update mydb.person set first_name="Jio" where id=104</arg>
+<doc>Executes the ``sql_string`` as a single SQL command.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.063542" elapsed="0.000894"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.064700" elapsed="0.000290"/>
+</kw>
+<status status="PASS" start="2025-11-12T13:05:24.063088" elapsed="0.002140"/>
+</test>
+<test id="s1-t9" name="Retrieve records from table" line="57">
+<kw name="Query" owner="DatabaseLibrary">
+<msg time="2025-11-12T13:05:24.066936" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;Select * from mydb.person&lt;/code&gt;</msg>
+<msg time="2025-11-12T13:05:24.067339" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T13:05:24.067504" level="INFO" html="true">&lt;div style="max-width: 100%; overflow-x: auto; max-height: 500px; overflow-y: auto;"&gt;&lt;table style="width: auto; border-collapse: collapse; border: 2px solid rgb(140 140 140)"&gt;&lt;caption style="text-align: left; font-weight: bold; padding: 5px;"&gt;Query returned 5 rows&lt;/caption&gt;&lt;tr&gt;&lt;th scope="col" style="position: sticky; top: 0; color:black; background-color: #d6ecd4; border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Row&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;id&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;first_name&lt;/th&gt;&lt;th scope="col" style="position: sticky; top: 0; background-color: #505050; color: #fff;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;last_name&lt;/th&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;0&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;101&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;John&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Smith&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;1&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;102&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;David&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Smith&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;2&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;103&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Joe&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Smith&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;3&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;104&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Jio&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Paul&lt;/td&gt;&lt;/tr&gt;&lt;tr style="background-color: var(--secondary-color, #eee)"&gt;&lt;th scope="row" style="color:black; background-color: #d6ecd4;border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;4&lt;/th&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;105&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Johny&lt;/td&gt;&lt;td style="border: 1px solid rgb(160 160 160);padding: 8px 10px;text-align: center;"&gt;Jack&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</msg>
+<msg time="2025-11-12T13:05:24.067736" level="INFO">@{queryresults} = [ (101, 'John', 'Smith') | (102, 'David', 'Smith') | (103, 'Joe', 'Smith') | (104, 'Jio', 'Paul') | (105, 'Johny', 'Jack') ]</msg>
+<var>@{queryresults}</var>
+<arg>Select * from mydb.person</arg>
+<doc>Runs a query with the ``select_statement`` and returns the result as list of rows.
+The type of row values depends on the database module -
+usually they are tuples or tuple-like objects.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.066757" elapsed="0.001012"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${queryresults}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.068006" elapsed="0.000253"/>
+</kw>
+<status status="PASS" start="2025-11-12T13:05:24.065557" elapsed="0.002943"/>
+</test>
+<test id="s1-t10" name="Delete record from table" line="61">
+<kw name="Execute Sql String" owner="DatabaseLibrary">
+<msg time="2025-11-12T13:05:24.069585" level="INFO" html="true">Executing sql:&lt;br&gt;&lt;code style="font-weight: bold;"&gt;Delete from mydb.person&lt;/code&gt;</msg>
+<msg time="2025-11-12T13:05:24.070053" level="INFO">Commit the transaction</msg>
+<msg time="2025-11-12T13:05:24.074812" level="INFO">${output} = None</msg>
+<var>${output}</var>
+<arg>Delete from mydb.person</arg>
+<doc>Executes the ``sql_string`` as a single SQL command.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.069303" elapsed="0.005560"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${output}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.075078" elapsed="0.000244"/>
+</kw>
+<status status="PASS" start="2025-11-12T13:05:24.068818" elapsed="0.006689"/>
+</test>
+<kw name="Disconnect From Database" owner="DatabaseLibrary" type="TEARDOWN">
+<doc>Disconnects from the database.</doc>
+<status status="PASS" start="2025-11-12T13:05:24.076048" elapsed="0.000257"/>
+</kw>
+<status status="PASS" start="2025-11-12T13:05:23.991912" elapsed="0.084440"/>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="10" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Ddt3" id="s1" pass="3" fail="0" skip="0">Ddt3</stat>
+<stat name="Dbtesting" id="s1" pass="10" fail="0" skip="0">Dbtesting</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2025-11-12T13:05:24.047911" level="WARN">Keyword 'DatabaseLibrary.Check If Exists In Database' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-11-12T13:05:24.049816" level="WARN">Keyword 'DatabaseLibrary.Check If Not Exists In Database' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-11-12T13:05:24.055120" level="WARN">Keyword 'DatabaseLibrary.Row Count Is 0' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-11-12T13:05:24.057001" level="WARN">Keyword 'DatabaseLibrary.Row Count Is Equal To X' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-11-12T13:05:24.058921" level="WARN">Keyword 'DatabaseLibrary.Row Count Is Greater Than X' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
+<msg time="2025-11-12T13:05:24.061166" level="WARN">Keyword 'DatabaseLibrary.Row Count Is Less Than X' is deprecated. Use new `Check Row Count` keyword with assertion engine instead.
+The deprecated keyword will be removed in future versions.</msg>
 </errors>
 </robot>

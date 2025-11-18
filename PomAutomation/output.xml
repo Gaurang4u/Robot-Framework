@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-11-18T14:50:30.989010" rpa="false" schemaversion="5">
+<suite id="s1" name="RegistrationTest" source="/home/gaurang/PycharmProjects/PomAutomation/TestCases/RegistrationTest.robot">
+<test id="s1-t1" name="Register" line="14">
+<kw name="Open my Browser" owner="RegisterKeywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-18T14:50:31.155231" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/automation-practice-form'.</msg>
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-18T14:50:31.154825" elapsed="5.013537"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-18T14:50:36.168758" elapsed="0.031969"/>
+</kw>
+<arg>${SiteUrl}</arg>
+<arg>${Browser}</arg>
+<status status="PASS" start="2025-11-18T14:50:31.153895" elapsed="5.047008"/>
+</kw>
+<kw name="Enter First Name" owner="RegisterKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-18T14:50:36.202408" level="INFO">Typing text 'student' into text field 'id:firstName'.</msg>
+<arg>${txt_FirstName}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T14:50:36.201912" elapsed="0.113619"/>
+</kw>
+<arg>${firstname}</arg>
+<status status="PASS" start="2025-11-18T14:50:36.201379" elapsed="0.114309"/>
+</kw>
+<kw name="Enter Last Name" owner="RegisterKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-18T14:50:36.316823" level="INFO">Typing text 'Password123' into text field 'id:lastName'.</msg>
+<arg>${txt_LastName}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T14:50:36.316510" elapsed="0.088626"/>
+</kw>
+<arg>${lastname}</arg>
+<status status="PASS" start="2025-11-18T14:50:36.316055" elapsed="0.089242"/>
+</kw>
+<kw name="Enter Email" owner="RegisterKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-18T14:50:36.406368" level="INFO">Typing text 'qwerty@demo.com' into text field 'id:userEmail'.</msg>
+<arg>${txt_email}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T14:50:36.406039" elapsed="0.110424"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-11-18T14:50:36.405590" elapsed="0.111030"/>
+</kw>
+<kw name="Select Gender" owner="RegisterKeywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-18T14:50:36.517552" level="INFO">Clicking element 'xpath://label[@for='gender-radio-1']'.</msg>
+<arg>${txt_gender}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T14:50:36.517257" elapsed="0.094971"/>
+</kw>
+<status status="PASS" start="2025-11-18T14:50:36.516907" elapsed="0.095466"/>
+</kw>
+<kw name="Enter Phone" owner="RegisterKeywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-18T14:50:36.613409" level="INFO">Typing text '1234567890' into text field 'id:userNumber'.</msg>
+<arg>${txt_phone}</arg>
+<arg>${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T14:50:36.613081" elapsed="0.109260"/>
+</kw>
+<arg>${phone}</arg>
+<status status="PASS" start="2025-11-18T14:50:36.612641" elapsed="0.109908"/>
+</kw>
+<kw name="Click Submit" owner="RegisterKeywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-11-18T14:50:36.724153" level="INFO">Executing JavaScript:
+window.scrollTo(0,document.body.scrollHeight)
+Without any arguments.</msg>
+<arg>window.scrollTo(0,document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-11-18T14:50:36.723432" elapsed="0.032743"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-11-18T14:50:36.756893" level="INFO">Clicking button 'xpath://button[@id='submit']'.</msg>
+<arg>${butn_submit}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-18T14:50:36.756471" elapsed="0.109334"/>
+</kw>
+<status status="PASS" start="2025-11-18T14:50:36.722928" elapsed="0.143067"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-18T14:50:39.866935" level="INFO">Slept 3 seconds.</msg>
+<arg>3 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-18T14:50:36.866281" elapsed="3.001179"/>
+</kw>
+<kw name="Verify Successful Login" owner="RegisterKeywords">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-18T14:50:39.894013" level="INFO">Current page contains text 'Thanks for submitting the form'.</msg>
+<arg>Thanks for submitting the form</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-11-18T14:50:39.869956" elapsed="0.024225"/>
+</kw>
+<status status="PASS" start="2025-11-18T14:50:39.868620" elapsed="0.025700"/>
+</kw>
+<kw name="Close my Browsers" owner="RegisterKeywords">
+<kw name="Close All Browsers" owner="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-11-18T14:50:39.894993" elapsed="0.063332"/>
+</kw>
+<status status="PASS" start="2025-11-18T14:50:39.894630" elapsed="0.063840"/>
+</kw>
+<status status="PASS" start="2025-11-18T14:50:31.153181" elapsed="8.805496"/>
+</test>
+<status status="PASS" start="2025-11-18T14:50:30.989935" elapsed="8.969236"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="RegistrationTest" id="s1" pass="1" fail="0" skip="0">RegistrationTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

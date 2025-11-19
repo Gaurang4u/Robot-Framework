@@ -1,83 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Rebot 7.3.2 (Python 3.10.12 on linux)" generated="2025-11-19T11:05:30.943727" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-11-19T11:05:15.717225" rpa="false" schemaversion="5">
 <suite id="s1" name="TestCases" source="/home/gaurang/PycharmProjects/PomAutomation/TestCases">
-<suite id="s1-s1" name="LoginTest" source="/home/gaurang/PycharmProjects/PomAutomation/TestCases/LoginTest.robot">
-<test id="s1-s1-t1" name="Login" line="12">
-<kw name="Open my Browser" owner="LoginKeywords">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-11-19T11:05:15.890032" level="INFO">Opening browser 'chrome' to base url 'https://practicetestautomation.com/practice-test-login/'.</msg>
-<arg>${SiteUrl}</arg>
-<arg>${Browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-11-19T11:05:15.889695" elapsed="2.641158"/>
-</kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-11-19T11:05:18.531119" elapsed="0.021718"/>
-</kw>
-<arg>${SiteUrl}</arg>
-<arg>${Browser}</arg>
-<status status="PASS" start="2025-11-19T11:05:15.888696" elapsed="2.664483"/>
-</kw>
-<kw name="Enter Username" owner="LoginKeywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-19T11:05:18.554752" level="INFO">Typing text 'student' into text field 'name:username'.</msg>
-<arg>${txt_loginUserName}</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-19T11:05:18.554088" elapsed="0.103061"/>
-</kw>
-<arg>${user}</arg>
-<status status="PASS" start="2025-11-19T11:05:18.553510" elapsed="0.103857"/>
-</kw>
-<kw name="Enter Password" owner="LoginKeywords">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-11-19T11:05:18.658932" level="INFO">Typing text 'Password123' into text field 'name:password'.</msg>
-<arg>${txt_loginPassword}</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-19T11:05:18.658244" elapsed="0.096120"/>
-</kw>
-<arg>${pwd}</arg>
-<status status="PASS" start="2025-11-19T11:05:18.657661" elapsed="0.096961"/>
-</kw>
-<kw name="Click Submit" owner="LoginKeywords">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-11-19T11:05:18.755827" level="INFO">Clicking button 'xpath://button[@id='submit']'.</msg>
-<arg>${btn_submit}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-11-19T11:05:18.755443" elapsed="0.818507"/>
-</kw>
-<status status="PASS" start="2025-11-19T11:05:18.754966" elapsed="0.819147"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-11-19T11:05:22.574811" level="INFO">Slept 3 seconds.</msg>
-<arg>3 seconds</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-11-19T11:05:19.574288" elapsed="3.000758"/>
-</kw>
-<kw name="Verify Successful Login" owner="LoginKeywords">
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2025-11-19T11:05:22.580178" level="INFO">Page title is 'Logged In Successfully | Practice Test Automation'.</msg>
-<arg>Logged In Successfully | Practice Test Automation</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2025-11-19T11:05:22.576048" elapsed="0.004263"/>
-</kw>
-<status status="PASS" start="2025-11-19T11:05:22.575463" elapsed="0.004997"/>
-</kw>
-<kw name="Close my Browsers" owner="LoginKeywords">
-<kw name="Close All Browsers" owner="SeleniumLibrary">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-11-19T11:05:22.581047" elapsed="0.058406"/>
-</kw>
-<status status="PASS" start="2025-11-19T11:05:22.580677" elapsed="0.058946"/>
-</kw>
-<status status="PASS" start="2025-11-19T11:05:15.887937" elapsed="6.751904"/>
-</test>
-<status status="PASS" start="2025-11-19T11:05:15.742000" elapsed="6.752000"/>
-</suite>
-<suite id="s1-s2" name="RegistrationTest" source="/home/gaurang/PycharmProjects/PomAutomation/TestCases/RegistrationTest.robot">
-<test id="s1-s2-t1" name="Register" line="14">
+<suite id="s1-s1" name="RegistrationTest" source="/home/gaurang/PycharmProjects/PomAutomation/TestCases/RegistrationTest.robot">
+<test id="s1-s1-t1" name="Register" line="14">
 <kw name="Open my Browser" owner="RegisterKeywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
 <msg time="2025-11-19T11:05:15.890013" level="INFO">Opening browser 'chrome' to base url 'https://demoqa.com/automation-practice-form'.</msg>
@@ -190,19 +115,17 @@ Without any arguments.</msg>
 </test>
 <status status="PASS" start="2025-11-19T11:05:15.741956" elapsed="14.962222"/>
 </suite>
-<doc>[https://pabot.org/?ref=log|Pabot] result from 2 executions.</doc>
-<status status="PASS" start="2025-11-19T11:05:15.722000" elapsed="14.983000"/>
+<status status="PASS" start="2025-11-19T11:05:15.722901" elapsed="14.982379"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="TestCases" id="s1" pass="2" fail="0" skip="0">TestCases</stat>
-<stat name="LoginTest" id="s1-s1" pass="1" fail="0" skip="0">TestCases.LoginTest</stat>
-<stat name="RegistrationTest" id="s1-s2" pass="1" fail="0" skip="0">TestCases.RegistrationTest</stat>
+<stat name="TestCases" id="s1" pass="1" fail="0" skip="0">TestCases</stat>
+<stat name="RegistrationTest" id="s1-s1" pass="1" fail="0" skip="0">TestCases.RegistrationTest</stat>
 </suite>
 </statistics>
 <errors>

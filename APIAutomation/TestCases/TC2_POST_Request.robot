@@ -25,6 +25,3 @@ PutInfo
     should contain  ${res_body}     title": "foo"
     should contain  ${res_body}     "body": "bar"
 
-#
-#    ${contentTypeValue}=    get from dictionary  ${response.headers}     Content-Type
-#    should be equal  ${contentTypeValue}    application/json; charset=utf-8

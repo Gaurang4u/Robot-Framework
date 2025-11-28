@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Employees>
+
+    <Employee id="E101">
+        <FirstName>Amitabh</FirstName>
+        <LastName>Mishra</LastName>
+        <Title>Senior Developer</Title>
+        <Division>Engineering</Division>
+        <Building>Tech Park Block A</Building>
+        <Room>402</Room>
+        <Supervisor>E104</Supervisor>
+    </Employee>
+
+    <Employee id="E102">
+        <FirstName>Prasoon</FirstName>
+        <LastName>Tripathi</LastName>
+        <Title>Financial Analyst</Title>
+        <Division>Finance</Division>
+        <Building>Corporate Tower</Building>
+        <Room>215</Room>
+        <Supervisor>E103</Supervisor>
+    </Employee>
+
+    <Employee id="E103">
+        <FirstName>Saket</FirstName>
+        <LastName>Verma</LastName>
+        <Title>HR Manager</Title>
+        <Division>Human Resources</Division>
+        <Building>Admin Block</Building>
+        <Room>118</Room>
+        <Supervisor>E104</Supervisor>
+    </Employee>
+
+    <Employee id="E104">
+        <FirstName>Harendra</FirstName>
+        <LastName>Singh</LastName>
+        <Title>Operations Lead</Title>
+        <Division>Operations</Division>
+        <Building>Main Office</Building>
+        <Room>301</Room>
+        <Supervisor>E105</Supervisor>
+    </Employee>
+
+    <Employee id="E105">
+        <FirstName>Vipin</FirstName>
+        <LastName>Kumar</LastName>
+        <Title>Marketing Specialist</Title>
+        <Division>Marketing</Division>
+        <Building>Sales Center</Building>
+        <Room>507</Room>
+        <Supervisor>E101</Supervisor>
+    </Employee>
+
+</Employees>

@@ -1,106 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-11-27T13:39:19.343934" rpa="false" schemaversion="5">
-<suite id="s1" name="TC4 ComplexJSON" source="/home/gaurang/PycharmProjects/APIAutomation/TestCases/TC4_ComplexJSON.robot">
-<test id="s1-t1" name="Get_countryInfo" line="11">
-<kw name="Create Session" owner="RequestsLibrary">
-<msg time="2025-11-27T13:39:19.517985" level="INFO">Creating Session using : alias=mysession, url=https://restcountries.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<arg>mysession</arg>
-<arg>${base_url}</arg>
-<doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2025-11-27T13:39:19.517747" elapsed="0.000447"/>
+<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-11-28T11:05:40.731830" rpa="false" schemaversion="5">
+<suite id="s1" name="TC5 XML" source="/home/gaurang/PycharmProjects/APIAutomation/TestCases/TC5_XML.robot">
+<test id="s1-t1" name="Testcase1" line="7">
+<kw name="Parse Xml" owner="XML">
+<msg time="2025-11-28T11:05:40.806982" level="INFO">${xml_obj} = &lt;Element 'Employees' at 0x75f5f29e2b60&gt;</msg>
+<var>${xml_obj}</var>
+<arg>/home/gaurang/PycharmProjects/APIAutomation/employees.xml</arg>
+<doc>Parses the given XML file or string into an element structure.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.806605" elapsed="0.000421"/>
 </kw>
-<kw name="Get Request" owner="RequestsLibrary">
-<msg time="2025-11-27T13:39:19.518419" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg time="2025-11-27T13:39:20.242137" level="INFO">GET Request : url=https://restcountries.com/v3.1/alpha/IN 
- path_url=/v3.1/alpha/IN 
- headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg time="2025-11-27T13:39:20.242830" level="INFO">GET Response : url=https://restcountries.com/v3.1/alpha/IN 
- status=200, reason=OK 
- headers={'Server': 'nginx/1.22.1', 'Date': 'Thu, 27 Nov 2025 08:09:20 GMT', 'Content-Type': 'application/json', 'Content-Length': '3368', 'Connection': 'keep-alive', 'Cache-Control': 'public, immutable, max-age=31556926'} 
- body=[{"name":{"common":"India","official":"Republic of India","nativeName":{"eng":{"official":"Republic of India","common":"India"},"hin":{"official":"भारत गणराज्य","common":"भारत"},"tam":{"official":"இந்தியக் குடியரசு","common":"இந்தியா"}}},"tld":[".in"],"cca2":"IN","ccn3":"356","cioc":"IND","independent":true,"status":"officially-assigned","unMember":true,"currencies":{"INR":{"symbol":"₹","name":"Indian rupee"}},"idd":{"root":"+9","suffixes":["1"]},"capital":["New Delhi"],"altSpellings":["IN","Bhārat","Republic of India","Bharat Ganrajya","இந்தியா"],"region":"Asia","subregion":"Southern Asia","languages":{"eng":"English","hin":"Hindi","tam":"Tamil"},"latlng":[20.0,77.0],"landlocked":false,"borders":["BGD","BTN","MMR","CHN","NPL","PAK"],"area":3287263.0,"demonyms":{"eng":{"f":"Indian","m":"Indian"},"fra":{"f":"Indienne","m":"Indien"}},"cca3":"IND","translations":{"ara":{"official":"جمهورية الهند","common":"الهند"},"bre":{"official":"Republik India","common":"India"},"ces":{"official":"Indická republika","common":"Indie"},"cym":{"official":"Republic of India","common":"India"},"deu":{"official":"Republik Indien","common":"Indien"},"est":{"official":"India Vabariik","common":"India"},"fin":{"official":"Intian tasavalta","common":"Intia"},"fra":{"official":"République de l'Inde","common":"Inde"},"hrv":{"official":"Republika Indija","common":"Indija"},"hun":{"official":"Indiai Köztársaság","common":"India"},"ind":{"official":"Republik India","common":"India"},"ita":{"official":"Repubblica dell'India","common":"India"},"jpn":{"official":"インド共和国","common":"インド"},"kor":{"official":"인도 공화국","common":"인도"},"nld":{"official":"Republiek India","common":"India"},"per":{"official":"جمهوری هندوستان","common":"هند"},"pol":{"official":"Republika Indii","common":"Indie"},"por":{"official":"República da Índia","common":"Índia"},"rus":{"official":"Республика Индия","common":"Индия"},"slk":{"official":"Indická republika","common":"India"},"spa":{"official":"República de la India","common":"India"},"srp":{"official":"Република Индија","common":"Индија"},"swe":{"official":"Republiken Indien","common":"Indien"},"tur":{"official":"Hindistan Cumhuriyeti","common":"Hindistan"},"urd":{"official":"جمہوریہ بھارت","common":"بھارت"},"zho":{"official":"印度共和国","common":"印度"}},"flag":"\uD83C\uDDEE\uD83C\uDDF3","maps":{"googleMaps":"https://goo.gl/maps/WSk3fLwG4vtPQetp7","openStreetMaps":"https://www.openstreetmap.org/relation/304716"},"population":1417492000,"gini":{"2011":35.7},"fifa":"IND","car":{"signs":["IND"],"side":"left"},"timezones":["UTC+05:30"],"continents":["Asia"],"flags":{"png":"https://flagcdn.com/w320/in.png","svg":"https://flagcdn.com/in.svg","alt":"The flag of India is composed of three equal horizontal bands of saffron, white and green. A navy blue wheel with twenty-four spokes — the Ashoka Chakra — is centered in the white band."},"coatOfArms":{"png":"https://mainfacts.com/media/images/coats_of_arms/in.png","svg":"https://mainfacts.com/media/images/coats_of_arms/in.svg"},"startOfWeek":"monday","capitalInfo":{"latlng":[28.6,77.2]},"postalCode":{"format":"######","regex":"^(\\d{6})$"}}] 
- </msg>
-<msg time="2025-11-27T13:39:20.243288" level="INFO">/home/gaurang/PycharmProjects/APIAutomation/.venv/lib/python3.10/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restcountries.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
-  warnings.warn(</msg>
-<msg time="2025-11-27T13:39:20.243890" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<var>${response}</var>
-<arg>mysession</arg>
-<arg>/v3.1/alpha/IN</arg>
-<doc>*DEPRECATED* Please use `GET On Session` instead.</doc>
-<status status="PASS" start="2025-11-27T13:39:19.518385" elapsed="0.725654"/>
-</kw>
-<kw name="To Json" owner="RequestsLibrary">
-<msg time="2025-11-27T13:39:20.245016" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
-<msg time="2025-11-27T13:39:20.247888" level="INFO">To JSON using : content=[{"name":{"common":"India","official":"Republic of India","nativeName":{"eng":{"official":"Republic of India","common":"India"},"hin":{"official":"भारत गणराज्य","common":"भारत"},"tam":{"official":"இந்தியக் குடியரசு","common":"இந்தியா"}}},"tld":[".in"],"cca2":"IN","ccn3":"356","cioc":"IND","independent":true,"status":"officially-assigned","unMember":true,"currencies":{"INR":{"symbol":"₹","name":"Indian rupee"}},"idd":{"root":"+9","suffixes":["1"]},"capital":["New Delhi"],"altSpellings":["IN","Bhārat","Republic of India","Bharat Ganrajya","இந்தியா"],"region":"Asia","subregion":"Southern Asia","languages":{"eng":"English","hin":"Hindi","tam":"Tamil"},"latlng":[20.0,77.0],"landlocked":false,"borders":["BGD","BTN","MMR","CHN","NPL","PAK"],"area":3287263.0,"demonyms":{"eng":{"f":"Indian","m":"Indian"},"fra":{"f":"Indienne","m":"Indien"}},"cca3":"IND","translations":{"ara":{"official":"جمهورية الهند","common":"الهند"},"bre":{"official":"Republik India","common":"India"},"ces":{"official":"Indická republika","common":"Indie"},"cym":{"official":"Republic of India","common":"India"},"deu":{"official":"Republik Indien","common":"Indien"},"est":{"official":"India Vabariik","common":"India"},"fin":{"official":"Intian tasavalta","common":"Intia"},"fra":{"official":"République de l'Inde","common":"Inde"},"hrv":{"official":"Republika Indija","common":"Indija"},"hun":{"official":"Indiai Köztársaság","common":"India"},"ind":{"official":"Republik India","common":"India"},"ita":{"official":"Repubblica dell'India","common":"India"},"jpn":{"official":"インド共和国","common":"インド"},"kor":{"official":"인도 공화국","common":"인도"},"nld":{"official":"Republiek India","common":"India"},"per":{"official":"جمهوری هندوستان","common":"هند"},"pol":{"official":"Republika Indii","common":"Indie"},"por":{"official":"República da Índia","common":"Índia"},"rus":{"official":"Республика Индия","common":"Индия"},"slk":{"official":"Indická republika","common":"India"},"spa":{"official":"República de la India","common":"India"},"srp":{"official":"Република Индија","common":"Индија"},"swe":{"official":"Republiken Indien","common":"Indien"},"tur":{"official":"Hindistan Cumhuriyeti","common":"Hindistan"},"urd":{"official":"جمہوریہ بھارت","common":"بھارت"},"zho":{"official":"印度共和国","common":"印度"}},"flag":"\uD83C\uDDEE\uD83C\uDDF3","maps":{"googleMaps":"https://goo.gl/maps/WSk3fLwG4vtPQetp7","openStreetMaps":"https://www.openstreetmap.org/relation/304716"},"population":1417492000,"gini":{"2011":35.7},"fifa":"IND","car":{"signs":["IND"],"side":"left"},"timezones":["UTC+05:30"],"continents":["Asia"],"flags":{"png":"https://flagcdn.com/w320/in.png","svg":"https://flagcdn.com/in.svg","alt":"The flag of India is composed of three equal horizontal bands of saffron, white and green. A navy blue wheel with twenty-four spokes — the Ashoka Chakra — is centered in the white band."},"coatOfArms":{"png":"https://mainfacts.com/media/images/coats_of_arms/in.png","svg":"https://mainfacts.com/media/images/coats_of_arms/in.svg"},"startOfWeek":"monday","capitalInfo":{"latlng":[28.6,77.2]},"postalCode":{"format":"######","regex":"^(\\d{6})$"}}] </msg>
-<msg time="2025-11-27T13:39:20.248351" level="INFO">To JSON using : pretty_print=False </msg>
-<msg time="2025-11-27T13:39:20.249637" level="INFO">${json_obj} = [{'name': {'common': 'India', 'official': 'Republic of India', 'nativeName': {'eng': {'official': 'Republic of India', 'common': 'India'}, 'hin': {'official': 'भारत गणराज्य', 'common': 'भारत'}, 'tam':...</msg>
-<var>${json_obj}</var>
-<arg>${response.content}</arg>
-<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
-<status status="PASS" start="2025-11-27T13:39:20.244863" elapsed="0.005000"/>
-</kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-11-27T13:39:20.297684" level="INFO">${country_name} = [{'common': 'India', 'official': 'Republic of India', 'nativeName': {'eng': {'official': 'Republic of India', 'common': 'India'}, 'hin': {'official': 'भारत गणराज्य', 'common': 'भारत'}, 'tam': {'offici...</msg>
-<var>${country_name}</var>
-<arg>${json_obj}</arg>
-<arg>$[0].name</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-11-27T13:39:20.250647" elapsed="0.047102"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${country_name[0]}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-27T13:39:20.297985" elapsed="0.000750"/>
-</kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-11-27T13:39:20.319854" level="INFO">${border_name} = ['BGD']</msg>
-<var>${border_name}</var>
-<arg>${json_obj}</arg>
-<arg>$[0].borders[0]</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-11-27T13:39:20.298924" elapsed="0.020980"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${border_name[0]}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-27T13:39:20.320126" elapsed="0.000563"/>
+<kw name="Get Element Text" owner="XML">
+<msg time="2025-11-28T11:05:40.807647" level="INFO">${emp_firstname} = Amitabh</msg>
+<var>${emp_firstname}</var>
+<arg>${xml_obj}</arg>
+<arg>.//Employee[1]/FirstName</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.807238" elapsed="0.000440"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<arg>${border_name[0]}</arg>
-<arg>BGD</arg>
+<arg>${emp_firstname}</arg>
+<arg>Amitabh</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2025-11-27T13:39:20.320855" elapsed="0.000566"/>
+<status status="PASS" start="2025-11-28T11:05:40.807861" elapsed="0.000212"/>
 </kw>
-<kw name="Get Value From Json" owner="JSONLibrary">
-<msg time="2025-11-27T13:39:20.342435" level="INFO">${border_name} = [['BGD', 'BTN', 'MMR', 'CHN', 'NPL', 'PAK']]</msg>
-<var>${border_name}</var>
-<arg>${json_obj}</arg>
-<arg>$[0].borders</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<status status="PASS" start="2025-11-27T13:39:20.321606" elapsed="0.020918"/>
+<kw name="Get Element" owner="XML">
+<msg time="2025-11-28T11:05:40.808481" level="INFO">${emp_firstname} = &lt;Element 'FirstName' at 0x75f5f29e2c00&gt;</msg>
+<var>${emp_firstname}</var>
+<arg>${xml_obj}</arg>
+<arg>.//Employee[1]/FirstName</arg>
+<doc>Returns an element in the ``source`` matching the ``xpath``.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.808231" elapsed="0.000281"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${emp_firstname.text}</arg>
+<arg>Amitabh</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.808655" elapsed="0.000476"/>
+</kw>
+<kw name="Element Text Should Be" owner="XML">
+<arg>${xml_obj}</arg>
+<arg>Amitabh</arg>
+<arg>.//Employee[1]/FirstName</arg>
+<doc>Verifies that the text of the specified element is ``expected``.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.809285" elapsed="0.000217"/>
+</kw>
+<kw name="Get Element Count" owner="XML">
+<msg time="2025-11-28T11:05:40.809841" level="INFO">5 elements matched './/Employee'.</msg>
+<msg time="2025-11-28T11:05:40.809935" level="INFO">${count} = 5</msg>
+<var>${count}</var>
+<arg>${xml_obj}</arg>
+<arg>.//Employee</arg>
+<doc>Returns and logs how many elements the given ``xpath`` matches.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.809653" elapsed="0.000310"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-11-28T11:05:40.810371" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>5</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.810167" elapsed="0.000275"/>
+</kw>
+<kw name="Element Attribute Should Be" owner="XML">
+<arg>${xml_obj}</arg>
+<arg>id</arg>
+<arg>E103</arg>
+<arg>.//Employee[3]</arg>
+<doc>Verifies that the specified attribute is ``expected``.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.810606" elapsed="0.000278"/>
+</kw>
+<kw name="Get Child Elements" owner="XML">
+<msg time="2025-11-28T11:05:40.811341" level="INFO">${child_elements} = [&lt;Element 'FirstName' at 0x75f5f29e2c00&gt;, &lt;Element 'LastName' at 0x75f5f29e2c50&gt;, &lt;Element 'Title' at 0x75f5f29e2ca0&gt;, &lt;Element 'Division' at 0x75f5f29e2d40&gt;, &lt;Element 'Building' at 0x75f5f29e2d90&gt;, &lt;...</msg>
+<var>${child_elements}</var>
+<arg>${xml_obj}</arg>
+<arg>.//Employee[1]</arg>
+<doc>Returns the child elements of the specified element as a list.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.811059" elapsed="0.000316"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-11-28T11:05:40.811675" level="INFO">Length is 7.</msg>
+<arg>${child_elements}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.811512" elapsed="0.000244"/>
+</kw>
+<kw name="Get Element Text" owner="XML">
+<msg time="2025-11-28T11:05:40.812459" level="INFO">${fname} = Amitabh</msg>
+<var>${fname}</var>
+<arg>${child_elements[0]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.811907" elapsed="0.000583"/>
+</kw>
+<kw name="Get Element Text" owner="XML">
+<msg time="2025-11-28T11:05:40.813124" level="INFO">${lname} = Mishra</msg>
+<var>${lname}</var>
+<arg>${child_elements[1]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.812637" elapsed="0.000518"/>
+</kw>
+<kw name="Get Element Text" owner="XML">
+<msg time="2025-11-28T11:05:40.813856" level="INFO">${title} = Senior Developer</msg>
+<var>${title}</var>
+<arg>${child_elements[2]}</arg>
+<doc>Returns all text of the element, possibly whitespace normalized.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.813316" elapsed="0.000571"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>${border_name[0]}</arg>
+<arg>${fname}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-11-27T13:39:20.342839" elapsed="0.000763"/>
+<status status="PASS" start="2025-11-28T11:05:40.814036" elapsed="0.000635"/>
 </kw>
-<kw name="Should Contain Any" owner="BuiltIn">
-<arg>${border_name[0]}</arg>
-<arg>BGD</arg>
-<arg>BTN PAK NPL MMR</arg>
-<doc>Fails if ``container`` does not contain any of the ``*items``.</doc>
-<status status="PASS" start="2025-11-27T13:39:20.343883" elapsed="0.000823"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${lname}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.814820" elapsed="0.000180"/>
 </kw>
-<kw name="Should Not Contain Any" owner="BuiltIn">
-<arg>${border_name[0]}</arg>
-<arg>ABC</arg>
-<doc>Fails if ``container`` contains one or more of the ``*items``.</doc>
-<status status="PASS" start="2025-11-27T13:39:20.345027" elapsed="0.000820"/>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${title}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-11-28T11:05:40.815143" elapsed="0.000229"/>
 </kw>
-<status status="PASS" start="2025-11-27T13:39:19.516618" elapsed="0.829525"/>
+<status status="PASS" start="2025-11-28T11:05:40.805399" elapsed="0.010274"/>
 </test>
-<status status="PASS" start="2025-11-27T13:39:19.344957" elapsed="1.001972"/>
+<status status="PASS" start="2025-11-28T11:05:40.732807" elapsed="0.083500"/>
 </suite>
 <statistics>
 <total>
@@ -109,11 +131,9 @@
 <tag>
 </tag>
 <suite>
-<stat name="TC4 ComplexJSON" id="s1" pass="1" fail="0" skip="0">TC4 ComplexJSON</stat>
+<stat name="TC5 XML" id="s1" pass="1" fail="0" skip="0">TC5 XML</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-11-27T13:39:19.518419" level="WARN">Keyword 'RequestsLibrary.Get Request' is deprecated. Please use `GET On Session` instead.</msg>
-<msg time="2025-11-27T13:39:20.245016" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
 </errors>
 </robot>
